@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div>
+        <input id="first" placeholder="number" type="number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">*</option>
+            <option value="/">/</option>
+        </select>
+        <input id="second" placeholder="number" type="number">
+        <button onclick="calculate()">submit</button><br />
+        <textarea id="answer" name="textarea" cols="40" rows="3" readonly="readonly"></textarea>
+    </div>
+
+    <script>
+        function calculate() {
+
+            var f = parseInt(document.getElementById('first').value);
+            var o = document.getElementById('operator').value;
+            var s = parseInt(document.getElementById('second').value);
+            var a = document.getElementById('answer');
+
+            var result;
+            switch(o) {
+                case '+':
+                    result = f + s;
+                    break;
+                case '-':
+                    result = f - s;
+                    break;
+                case 'x':
+                    result = f * s;
+                    break;
+                case '/':
+                    result = f / s;
+                    break;
+
+                default:
+                    alert("invalid operator ")
+                    return;
+
+            }
+
+            a.value = result;
+
+
+        }
+    </script>
+
+</body>
+</html>
